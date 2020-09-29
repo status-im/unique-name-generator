@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/elliptic"
 	"encoding/hex"
+	"fmt"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/ethereum/go-ethereum/crypto/secp256k1"
 	"github.com/mr-tron/base58"
@@ -58,8 +59,12 @@ func main() {
 		h.Write(kb)
 		hkb := h.Sum([]byte{})
 
-		spew.Dump("----------------")
-		spew.Dump(x.String(), y.String(), base58.Encode(kb), base58.Encode(kb[1:]), randWord(x) +" "+ randWord(y) +":"+ base58.Encode(hkb))
+		fmt.Println("----------------------")
+		fmt.Println("x coord              :", x.String())
+		fmt.Println("y coord              :", y.String())
+		fmt.Println("Full key byte base58 :", base58.Encode(kb))
+		fmt.Println("32 byte key base58   :", base58.Encode(kb[1:]))
+		fmt.Println("name and sum         :", randWord(x) +" "+ randWord(y) +":"+ base58.Encode(hkb))
 	}
 }
 
