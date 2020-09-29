@@ -9,6 +9,8 @@ Provide a concise security feature that:
 - Is something that a human brain will recognise
 - Has enough entropy to be hard to casually find collisions
 
+This approach would produce a human readable security feature that has more entropy than the existing 3 word pseudonym.
+
 Sample below:
 
 ```text
